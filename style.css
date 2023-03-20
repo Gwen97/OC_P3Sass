@@ -187,6 +187,7 @@ h4 {
   font-size: 0.9em;
   text-decoration: none;
   color: #fff;
+  justify-content: flex-start;
 }
 
 .footer__title {
@@ -205,6 +206,21 @@ h4 {
 .note > a {
   display: inline;
   text-decoration: underline;
+}
+
+.loading-spinner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+.loading-spinner .spinner {
+  animation: spin 1s linear infinite;
+  border: 2px solid #f3f3f3;
+  border-top: 2px solid #3498db;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
 }
 
 @media screen and (min-width: 1024px) {
@@ -524,55 +540,6 @@ h4 {
     opacity: 1;
   }
 }
-.spinner-background {
-  flex-direction: column;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1;
-  position: fixed;
-  top: 0;
-  right: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: #fff;
-  animation-name: hide;
-  animation-delay: 2100ms;
-  animation-fill-mode: forwards;
-}
-
-.spinner {
-  flex-direction: column;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-}
-
-.spinner__primary, .spinner__secondary {
-  position: absolute;
-  margin: auto;
-  z-index: 2;
-  border-radius: 50%;
-  opacity: 0.7;
-  animation: spin 1000ms 4 alternate cubic-bezier(0.21, 1, 0.13, 1.01);
-}
-
-.spinner__primary {
-  height: 150px;
-  width: 150px;
-  border: #9356DC 2px solid;
-  transform: rotate3d(1, 1, 1, 360deg) scale(0.5);
-}
-
-.spinner__secondary {
-  height: 110px;
-  width: 110px;
-  border: #FF79DA 2px solid;
-  transform: rotate3d(-1, -1, 1, 360deg) scale(0.5);
-  animation-delay: 200ms;
-}
-
 .loading-text {
   flex-direction: column;
   display: flex;
@@ -594,7 +561,7 @@ h4 {
     height: auto;
   }
 }
-.home {
+.welcome {
   animation-name: display;
   animation-delay: 2100ms;
   animation-fill-mode: forwards;
@@ -602,7 +569,7 @@ h4 {
   height: 100vh;
 }
 
-.home .fa-heart {
+.welcome .fa-heart {
   position: absolute;
   bottom: 32px;
   right: 18px;
@@ -713,60 +680,60 @@ h4 {
 }
 
 @media screen and (min-width: 768px) {
-  .home .home-main {
+  .welcome .welcome-main {
     flex-direction: column;
     display: flex;
     justify-content: center;
     align-items: center;
     padding-bottom: 50px;
   }
-  .home .intro {
+  .welcome .intro {
     flex-direction: row;
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
   }
-  .home .top-banner,
-  .home .steps {
+  .welcome .top-banner,
+  .welcome .steps {
     width: calc(50% - 1rem);
   }
-  .home .top-banner {
+  .welcome .top-banner {
     padding: 1.5rem;
     padding-right: 0;
   }
-  .home .location {
+  .welcome .location {
     border-top-left-radius: 1rem;
     border-top-right-radius: 1rem;
     box-shadow: none;
   }
-  .home .guide {
+  .welcome .guide {
     border-bottom-left-radius: 1rem;
     border-bottom-right-radius: 1rem;
   }
-  .home .steps {
+  .welcome .steps {
     flex-direction: column;
     display: flex;
     justify-content: flex-start;
     align-items: stretch;
     margin-left: 1.5rem;
   }
-  .home .steps__wrapper {
+  .welcome .steps__wrapper {
     margin: 0;
   }
-  .home .step {
+  .welcome .step {
     padding: 1em 0;
   }
-  .home .restaurants {
+  .welcome .restaurants {
     width: 100%;
     background-color: #fff;
   }
-  .home .section-title {
+  .welcome .section-title {
     margin-bottom: 0.5em;
   }
 }
 @media screen and (min-width: 1024px) {
-  .home .home-main {
+  .welcome .welcome-main {
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
@@ -775,24 +742,24 @@ h4 {
     margin-left: auto;
     padding-bottom: 90px;
   }
-  .home .container {
+  .welcome .container {
     padding-right: 0;
   }
-  .home .intro {
+  .welcome .intro {
     flex-direction: column;
     width: calc(33.3333333333% - 1rem);
   }
-  .home .top-banner,
-  .home .steps {
+  .welcome .top-banner,
+  .welcome .steps {
     width: 100%;
   }
-  .home .top-banner {
+  .welcome .top-banner {
     padding-top: 0;
   }
-  .home .steps {
+  .welcome .steps {
     margin: 0;
   }
-  .home .restaurants {
+  .welcome .restaurants {
     width: calc(66.6666666667% - 1rem);
     margin: 0;
     padding-top: 0;
